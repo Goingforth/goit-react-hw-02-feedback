@@ -1,33 +1,23 @@
-const Statistics = ({ good, neutral, bad, total, positive }) => {
+import PropTypes from 'prop-types';
+
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <ul className="<Statistics">
-      <li>
-        <span>Good:</span>
-        {/* <span>{this.state.good}</span> */}
-        <span>{good}</span>
-      </li>
-      <li>
-        <span>Neutral:</span>
-        {/* <span>{this.state.neutral}</span> */}
-        <span>{neutral}</span>
-      </li>
-      <li>
-        <span>Bad:</span>
-        {/* <span>{this.state.bad}</span> */}
-        <span>{bad}</span>
-      </li>
-      <li>
-        <span>Total:</span>
-        {/* <span>{this.countTotalFeedback()}</span> */}
-        <span>{total}</span>
-      </li>
-      <li>
-        <span>Positive feedback:</span>
-        {/* <span>{this.countPositiveFeedbackPercentage()}</span> */}
-        <span>{positive}</span>
-      </li>
+      <li>Good:{good}</li>
+      <li>Neutral:{neutral}</li>
+      <li>Bad:{bad}</li>
+      <li>Total:{total}</li>
+      <li>Positive feedback:{positivePercentage}%</li>
     </ul>
   );
 };
 
 export default Statistics;
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
